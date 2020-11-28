@@ -399,6 +399,20 @@ function fifthQuestion (event) {
   subText.textContent = 'Your final score is: ';
   boxEl.appendChild(subText);
 
+  // Create the form for user to input initials
+  var formEl = document.createElement('form');
+  formEl.textContent = 'Enter initials: ';
+  formEl.setAttribute('type', 'form');
+  boxEl.appendChild(formEl);
+
+  var input = document.createElement('input');
+  var submit = document.createElement('button');
+  submit.textContent = 'Submit';
+  submit.setAttribute('style', 'margin-left: 10px');
+  formEl.appendChild(input);
+  formEl.appendChild(submit);
+
+
 
   }
 
