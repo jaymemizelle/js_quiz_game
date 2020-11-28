@@ -421,9 +421,8 @@ function fifthQuestion (event) {
   }
 
   /* --> Highscores page <-- */
-function highscores(event) {
-  event.preventDefault();
-
+function highscores() {
+  
   // Clear main
   main.textContent = '';
 
@@ -437,15 +436,18 @@ function highscores(event) {
   boxEl.appendChild(highHeader);
 
   // Create 'go-back' and 'clear-highscores' buttons
+  var formEl = document.createElement('form');
+  formEl.setAttribute('type', 'form');
+  boxEl.appendChild(formEl);
   var goBack = document.createElement('button');
   var clearHighscores = document.createElement('button');
   goBack.textContent = 'Go Back';
-  goBack.setAttribute('type', 'submit');
   goBack.setAttribute('style', 'margin: 10px');
+  goBack.setAttribute('type', 'submit');
   clearHighscores.setAttribute('style', 'margin: 10px');
   clearHighscores.textContent = 'Clear Highscores';
-  boxEl.appendChild(goBack);
-  boxEl.appendChild(clearHighscores);
+  formEl.appendChild(goBack);
+  formEl.appendChild(clearHighscores);
 
   // Go back to start page
   goBack.addEventListener('click', function(){
