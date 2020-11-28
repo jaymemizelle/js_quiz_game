@@ -82,11 +82,17 @@ function firstQuestion (event) {
     b.setAttribute('class', 'wrong-answer');
     d.setAttribute('class', 'wrong-answer');
 
-  var userRight = document.querySelector('.right-answer');
-  var userWrong = document.querySelector('.wrong-answer');
+    // Variables which select the user's answer by class
+    var userRight = document.querySelector('.right-answer');
+    var userWrong = document.querySelector('.wrong-answer');
 
+    // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
+
+      // Adds 10 points to score
       score += 10;
+
+      // Prints 'correct answer!'
       var rectangle = document.createElement('div');
       main.appendChild(rectangle);
       rectangle.setAttribute('style', 'margin: 80px');
@@ -96,12 +102,21 @@ function firstQuestion (event) {
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
       main.appendChild(rightAnswer);
+
+      // Waits 700milliseconds, then calls next question
       setTimeout(secondQuestion, 700);
   });
 
+  // If user clicks wrong answer, then execute this function:
   userWrong.addEventListener('click', function(){
+
+    // Subtracts 5 points from score
     score -= 5;
+
+    // Subtracts 10 seconds from time
     secondsLeft = secondsLeft - 10;
+
+    // Prints 'wrong answer!'
     var rectangle = document.createElement('div');
     main.appendChild(rectangle);
     rectangle.setAttribute('style', 'margin: 80px');
@@ -111,6 +126,8 @@ function firstQuestion (event) {
     wrongAnswer.setAttribute('style', 'font-style: italic;');
     wrongAnswer.textContent = 'Wrong Answer!'
     main.appendChild(wrongAnswer);
+
+    // Waits 700milliseconds, then calls next question
     setTimeout(secondQuestion, 700);
   })
     
@@ -169,11 +186,17 @@ function secondQuestion () {
   d.setAttribute('class', 'wrong-answer');
 
 
+  // Variables which select the user's answer by class
   var userRight = document.querySelector('.right-answer');
   var userWrong = document.querySelector('.wrong-answer');
 
+    // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
+
+      // Adds 10 points to score
       score += 10;
+
+      // Prints 'correct answer!'
       var rectangle = document.createElement('div');
       main.appendChild(rectangle);
       rectangle.setAttribute('style', 'margin: 80px');
@@ -183,12 +206,21 @@ function secondQuestion () {
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
       main.appendChild(rightAnswer);
+
+      // Waits 700milliseconds, then calls next question
       setTimeout(thirdQuestion, 700);
   });
 
+  // If user clicks wrong answer, then execute this function:
   userWrong.addEventListener('click', function(){
+
+    // Subtracts 5 points from score
     score -= 5;
+
+    // Subtracts 10 seconds from time
     secondsLeft = secondsLeft - 10;
+
+    // Prints 'wrong answer!'
     var rectangle = document.createElement('div');
     main.appendChild(rectangle);
     rectangle.setAttribute('style', 'margin: 80px');
@@ -198,6 +230,8 @@ function secondQuestion () {
     wrongAnswer.setAttribute('style', 'font-style: italic;');
     wrongAnswer.textContent = 'Wrong Answer!'
     main.appendChild(wrongAnswer);
+
+    // Waits 700milliseconds, then calls next question
     setTimeout(thirdQuestion, 700);
   })
 }
@@ -253,11 +287,17 @@ function thirdQuestion () {
   c.setAttribute('class', 'wrong-answer');
 
 
-  var userRight = document.querySelector('.right-answer');
-  var userWrong = document.querySelector('.wrong-answer');
+    // Variables which select the user's answer by class
+    var userRight = document.querySelector('.right-answer');
+    var userWrong = document.querySelector('.wrong-answer');
 
+    // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
+
+      // Adds 10 points to score
       score += 10;
+
+      // Prints 'correct answer!'
       var rectangle = document.createElement('div');
       main.appendChild(rectangle);
       rectangle.setAttribute('style', 'margin: 80px');
@@ -267,12 +307,21 @@ function thirdQuestion () {
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
       main.appendChild(rightAnswer);
+
+      // Waits 700milliseconds, then calls next question
       setTimeout(fourthQuestion, 700);
   });
 
+  // If user clicks wrong answer, then execute this function:
   userWrong.addEventListener('click', function(){
+
+    // Subtracts 5 points from score
     score -= 5;
+
+    // Subtracts 10 seconds from time
     secondsLeft = secondsLeft - 10;
+
+    // Prints 'wrong answer!'
     var rectangle = document.createElement('div');
     main.appendChild(rectangle);
     rectangle.setAttribute('style', 'margin: 80px');
@@ -282,6 +331,8 @@ function thirdQuestion () {
     wrongAnswer.setAttribute('style', 'font-style: italic;');
     wrongAnswer.textContent = 'Wrong Answer!'
     main.appendChild(wrongAnswer);
+
+    // Waits 700milliseconds, then calls next question
     setTimeout(fourthQuestion, 700);
   })
 }
@@ -337,11 +388,17 @@ function fourthQuestion () {
   d.setAttribute('class', 'wrong-answer');
 
 
-  var userRight = document.querySelector('.right-answer');
-  var userWrong = document.querySelector('.wrong-answer');
+    // Variables which select the user's answer by class
+    var userRight = document.querySelector('.right-answer');
+    var userWrong = document.querySelector('.wrong-answer');
 
+    // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
+
+      // Adds 10 points to score
       score += 10;
+
+      // Prints 'correct answer!'
       var rectangle = document.createElement('div');
       main.appendChild(rectangle);
       rectangle.setAttribute('style', 'margin: 80px');
@@ -351,12 +408,21 @@ function fourthQuestion () {
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
       main.appendChild(rightAnswer);
+
+      // Waits 700milliseconds, then calls next question
       setTimeout(fifthQuestion, 700);
   });
 
+  // If user clicks wrong answer, then execute this function:
   userWrong.addEventListener('click', function(){
+
+    // Subtracts 5 points from score
     score -= 5;
+
+    // Subtracts 10 seconds from time
     secondsLeft = secondsLeft - 10;
+
+    // Prints 'wrong answer!'
     var rectangle = document.createElement('div');
     main.appendChild(rectangle);
     rectangle.setAttribute('style', 'margin: 80px');
@@ -366,6 +432,8 @@ function fourthQuestion () {
     wrongAnswer.setAttribute('style', 'font-style: italic;');
     wrongAnswer.textContent = 'Wrong Answer!'
     main.appendChild(wrongAnswer);
+
+    // Waits 700milliseconds, then calls next question
     setTimeout(fifthQuestion, 700);
   })
 
@@ -422,11 +490,17 @@ function fifthQuestion () {
   d.setAttribute('class', 'wrong-answer');
 
 
-  var userRight = document.querySelector('.right-answer');
-  var userWrong = document.querySelector('.wrong-answer');
+    // Variables which select the user's answer by class
+    var userRight = document.querySelector('.right-answer');
+    var userWrong = document.querySelector('.wrong-answer');
 
+    // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
+
+      // Adds 10 points to score
       score += 10;
+
+      // Prints 'correct answer!'
       var rectangle = document.createElement('div');
       main.appendChild(rectangle);
       rectangle.setAttribute('style', 'margin: 80px');
@@ -436,12 +510,21 @@ function fifthQuestion () {
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
       main.appendChild(rightAnswer);
+
+      // Waits 700milliseconds, then calls next question
       setTimeout(allDone, 700);
   });
 
+  // If user clicks wrong answer, then execute this function:
   userWrong.addEventListener('click', function(){
+
+    // Subtracts 5 points from score
     score -= 5;
+
+    // Subtracts 10 seconds from time
     secondsLeft = secondsLeft - 10;
+
+    // Prints 'wrong answer!'
     var rectangle = document.createElement('div');
     main.appendChild(rectangle);
     rectangle.setAttribute('style', 'margin: 80px');
@@ -451,6 +534,8 @@ function fifthQuestion () {
     wrongAnswer.setAttribute('style', 'font-style: italic;');
     wrongAnswer.textContent = 'Wrong Answer!'
     main.appendChild(wrongAnswer);
+
+    // Waits 700milliseconds, then calls next question
     setTimeout(allDone, 700);
   })
 }
