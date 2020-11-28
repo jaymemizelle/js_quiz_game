@@ -11,6 +11,7 @@ var secondsLeft = 76;
 var time = document.querySelector('h5');
 var header = document.querySelector('header');
 var main = document.querySelector('main');
+var score = 0;
 
 /* -- > Creates timer <-- */
 function timerBegin() {
@@ -23,44 +24,10 @@ function timerBegin() {
   
       if (secondsLeft === 0) {
         clearInterval(timerInterval);
+        allDone();
       } 
     }, 1000);
   }
-
-
-/* --> Correct answer <-- */
-function correctAnswer() {
-  var timerInterval = setInterval(() => {
-  var rectangle = document.createElement('div');
-  main.appendChild(rectangle);
-  rectangle.setAttribute('style', 'margin: 80px');
-  var line = document.createElement('hr');
-  rectangle.appendChild(line);
-  var rightAnswer = document.createElement('p');
-  rightAnswer.setAttribute('style', 'font-style: italic');
-  rightAnswer.textContent = 'Correct Answer!'
-  main.appendChild(rightAnswer);
-  }, 1000);
-  clearInterval(timerInterval);
-}
-
-
-
-/* --> Incorrect answer <-- */
-function incorrectAnswer() {
-  // secondsLeft = secondsLeft - 10;
-  var rectangle = document.createElement('div');
-  main.appendChild(rectangle);
-  rectangle.setAttribute('style', 'margin: 80px');
-  var line = document.createElement('hr');
-  rectangle.appendChild(line);
-  var wrongAnswer = document.createElement('p');
-  wrongAnswer.setAttribute('style', 'font-style: italic;');
-  wrongAnswer.textContent = 'Wrong Answer!'
-  main.appendChild(wrongAnswer);
-}
-
-
 
 
 /* --> First question <-- */
@@ -76,9 +43,9 @@ function firstQuestion (event) {
     main.appendChild(boxEl);
 
     // Create question and append them to the box 
-    var question1El = document.createElement('h2');
-    question1El.textContent = 'Commonly used data types DO NOT include: ';
-    boxEl.appendChild(question1El);
+    var questionEl = document.createElement('h2');
+    questionEl.textContent = 'Commonly used data types DO NOT include: ';
+    boxEl.appendChild(questionEl);
 
     // Create an ordered list for the answers and append the list items to the ol
     var answers = document.createElement('ol');
@@ -115,24 +82,44 @@ function firstQuestion (event) {
     b.setAttribute('class', 'wrong-answer');
     d.setAttribute('class', 'wrong-answer');
 
+  var userRight = document.querySelector('.right-answer');
+  var userWrong = document.querySelector('.wrong-answer');
 
-    // Create event listener to call right answer when clicked
-    document.querySelector('.right-answer').addEventListener('click', correctAnswer);
+  userRight.addEventListener('click', function(){
+      score += 10;
+      var rectangle = document.createElement('div');
+      main.appendChild(rectangle);
+      rectangle.setAttribute('style', 'margin: 80px');
+      var line = document.createElement('hr');
+      rectangle.appendChild(line);
+      var rightAnswer = document.createElement('p');
+      rightAnswer.setAttribute('style', 'font-style: italic');
+      rightAnswer.textContent = 'Correct Answer!'
+      main.appendChild(rightAnswer);
+      setTimeout(secondQuestion, 700);
+  });
 
-    // Create event listener to call wrong answer when clicked
-    document.querySelector('.wrong-answer').addEventListener('click', incorrectAnswer);
-
-    // Call the function for the second question no matter which answer is clicked
-    document.querySelector('.right-answer').addEventListener('click', secondQuestion);
-
-    document.querySelector('.wrong-answer').addEventListener('click', secondQuestion);
+  userWrong.addEventListener('click', function(){
+    score -= 5;
+    secondsLeft = secondsLeft - 10;
+    var rectangle = document.createElement('div');
+    main.appendChild(rectangle);
+    rectangle.setAttribute('style', 'margin: 80px');
+    var line = document.createElement('hr');
+    rectangle.appendChild(line);
+    var wrongAnswer = document.createElement('p');
+    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.textContent = 'Wrong Answer!'
+    main.appendChild(wrongAnswer);
+    setTimeout(secondQuestion, 700);
+  })
     
 }
 
 
 /* --> Second question <-- */
-function secondQuestion (event) {
-  event.preventDefault();
+function secondQuestion () {
+  // event.preventDefault();
 
   // Clear main content
   main.textContent = '';
@@ -142,9 +129,9 @@ function secondQuestion (event) {
   main.appendChild(boxEl);
 
   // Create question and append them to the box 
-  var question1El = document.createElement('h2');
-  question1El.textContent = 'The condition in an if/else statment is enclosed within _______.';
-  boxEl.appendChild(question1El);
+  var questionEl = document.createElement('h2');
+  questionEl.textContent = 'The condition in an if/else statment is enclosed within _______.';
+  boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and append the list items to the ol
   var answers = document.createElement('ol');
@@ -182,21 +169,41 @@ function secondQuestion (event) {
   d.setAttribute('class', 'wrong-answer');
 
 
-  // Create event listener to call right answer when clicked
-  document.querySelector('.right-answer').addEventListener('click', correctAnswer);
+  var userRight = document.querySelector('.right-answer');
+  var userWrong = document.querySelector('.wrong-answer');
 
-  // Create event listener to call wrong answer when clicked
-  document.querySelector('.wrong-answer').addEventListener('click', incorrectAnswer);
+  userRight.addEventListener('click', function(){
+      score += 10;
+      var rectangle = document.createElement('div');
+      main.appendChild(rectangle);
+      rectangle.setAttribute('style', 'margin: 80px');
+      var line = document.createElement('hr');
+      rectangle.appendChild(line);
+      var rightAnswer = document.createElement('p');
+      rightAnswer.setAttribute('style', 'font-style: italic');
+      rightAnswer.textContent = 'Correct Answer!'
+      main.appendChild(rightAnswer);
+      setTimeout(thirdQuestion, 700);
+  });
 
-  // Call the Function for the third question regardless of the answer
-  document.querySelector('.right-answer').addEventListener('click', thirdQuestion);
-
-  document.querySelector('.wrong-answer').addEventListener('click', thirdQuestion);
+  userWrong.addEventListener('click', function(){
+    score -= 5;
+    secondsLeft = secondsLeft - 10;
+    var rectangle = document.createElement('div');
+    main.appendChild(rectangle);
+    rectangle.setAttribute('style', 'margin: 80px');
+    var line = document.createElement('hr');
+    rectangle.appendChild(line);
+    var wrongAnswer = document.createElement('p');
+    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.textContent = 'Wrong Answer!'
+    main.appendChild(wrongAnswer);
+    setTimeout(thirdQuestion, 700);
+  })
 }
 
 /* --> Third question <-- */
-function thirdQuestion (event) {
-  event.preventDefault();
+function thirdQuestion () {
 
   // Clear main content
   main.textContent = '';
@@ -206,9 +213,9 @@ function thirdQuestion (event) {
   main.appendChild(boxEl);
 
   // Create question and append them to the box 
-  var question1El = document.createElement('h2');
-  question1El.textContent = 'Arrays in JavaScript can be used to store _______.';
-  boxEl.appendChild(question1El);
+  var questionEl = document.createElement('h2');
+  questionEl.textContent = 'Arrays in JavaScript can be used to store _______.';
+  boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
   var answers = document.createElement('ol');
@@ -246,21 +253,41 @@ function thirdQuestion (event) {
   c.setAttribute('class', 'wrong-answer');
 
 
-  // Create event listener to call right answer when clicked
-  document.querySelector('.right-answer').addEventListener('click', correctAnswer);
+  var userRight = document.querySelector('.right-answer');
+  var userWrong = document.querySelector('.wrong-answer');
 
-  // Create event listener to call wrong answer when clicked
-  document.querySelector('.wrong-answer').addEventListener('click', incorrectAnswer);
+  userRight.addEventListener('click', function(){
+      score += 10;
+      var rectangle = document.createElement('div');
+      main.appendChild(rectangle);
+      rectangle.setAttribute('style', 'margin: 80px');
+      var line = document.createElement('hr');
+      rectangle.appendChild(line);
+      var rightAnswer = document.createElement('p');
+      rightAnswer.setAttribute('style', 'font-style: italic');
+      rightAnswer.textContent = 'Correct Answer!'
+      main.appendChild(rightAnswer);
+      setTimeout(fourthQuestion, 700);
+  });
 
-  // Call the Function for the third question
-  document.querySelector('.right-answer').addEventListener('click', fourthQuestion);
-
-  document.querySelector('.wrong-answer').addEventListener('click', fourthQuestion);
+  userWrong.addEventListener('click', function(){
+    score -= 5;
+    secondsLeft = secondsLeft - 10;
+    var rectangle = document.createElement('div');
+    main.appendChild(rectangle);
+    rectangle.setAttribute('style', 'margin: 80px');
+    var line = document.createElement('hr');
+    rectangle.appendChild(line);
+    var wrongAnswer = document.createElement('p');
+    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.textContent = 'Wrong Answer!'
+    main.appendChild(wrongAnswer);
+    setTimeout(fourthQuestion, 700);
+  })
 }
 
 /* --> Fourth question <-- */
-function fourthQuestion (event) {
-  event.preventDefault();
+function fourthQuestion () {
 
   // Clear main
   main.textContent = '';
@@ -270,9 +297,9 @@ function fourthQuestion (event) {
   main.appendChild(boxEl);
 
   // Create question and append them to the box 
-  var question1El = document.createElement('h2');
-  question1El.textContent = 'String values must be enclosed withing _____ when being assigned to variables.';
-  boxEl.appendChild(question1El);
+  var questionEl = document.createElement('h2');
+  questionEl.textContent = 'String values must be enclosed withing _____ when being assigned to variables.';
+  boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
   var answers = document.createElement('ol');
@@ -310,21 +337,42 @@ function fourthQuestion (event) {
   d.setAttribute('class', 'wrong-answer');
 
 
-  // Create event listener to call right answer when clicked
-  document.querySelector('.right-answer').addEventListener('click', correctAnswer);
+  var userRight = document.querySelector('.right-answer');
+  var userWrong = document.querySelector('.wrong-answer');
 
-  // Create event listener to call wrong answer when clicked
-  document.querySelector('.wrong-answer').addEventListener('click', incorrectAnswer);
+  userRight.addEventListener('click', function(){
+      score += 10;
+      var rectangle = document.createElement('div');
+      main.appendChild(rectangle);
+      rectangle.setAttribute('style', 'margin: 80px');
+      var line = document.createElement('hr');
+      rectangle.appendChild(line);
+      var rightAnswer = document.createElement('p');
+      rightAnswer.setAttribute('style', 'font-style: italic');
+      rightAnswer.textContent = 'Correct Answer!'
+      main.appendChild(rightAnswer);
+      setTimeout(fifthQuestion, 700);
+  });
 
-  // Call the Function for the third question
-  document.querySelector('.right-answer').addEventListener('click', fifthQuestion);
+  userWrong.addEventListener('click', function(){
+    score -= 5;
+    secondsLeft = secondsLeft - 10;
+    var rectangle = document.createElement('div');
+    main.appendChild(rectangle);
+    rectangle.setAttribute('style', 'margin: 80px');
+    var line = document.createElement('hr');
+    rectangle.appendChild(line);
+    var wrongAnswer = document.createElement('p');
+    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.textContent = 'Wrong Answer!'
+    main.appendChild(wrongAnswer);
+    setTimeout(fifthQuestion, 700);
+  })
 
-  document.querySelector('.wrong-answer').addEventListener('click', fifthQuestion);
 }
 
 /* --> Fifth question <-- */
-function fifthQuestion (event) {
-  event.preventDefault();
+function fifthQuestion () {
 
   // Clear main
   main.textContent = '';
@@ -334,9 +382,9 @@ function fifthQuestion (event) {
   main.appendChild(boxEl);
 
   // Create question and append them to the box 
-  var question1El = document.createElement('h2');
-  question1El.textContent = 'A very useful tool used during development and debugging for printing content to the debugger is: ';
-  boxEl.appendChild(question1El);
+  var questionEl = document.createElement('h2');
+  questionEl.textContent = 'A very useful tool used during development and debugging for printing content to the debugger is: ';
+  boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
   var answers = document.createElement('ol');
@@ -374,21 +422,42 @@ function fifthQuestion (event) {
   d.setAttribute('class', 'wrong-answer');
 
 
-  // Create event listener to call right answer when clicked
-  document.querySelector('.right-answer').addEventListener('click', correctAnswer);
+  var userRight = document.querySelector('.right-answer');
+  var userWrong = document.querySelector('.wrong-answer');
 
-  // Create event listener to call wrong answer when clicked
-  document.querySelector('.wrong-answer').addEventListener('click', incorrectAnswer);
+  userRight.addEventListener('click', function(){
+      score += 10;
+      var rectangle = document.createElement('div');
+      main.appendChild(rectangle);
+      rectangle.setAttribute('style', 'margin: 80px');
+      var line = document.createElement('hr');
+      rectangle.appendChild(line);
+      var rightAnswer = document.createElement('p');
+      rightAnswer.setAttribute('style', 'font-style: italic');
+      rightAnswer.textContent = 'Correct Answer!'
+      main.appendChild(rightAnswer);
+      setTimeout(allDone, 700);
+  });
 
-  // Call the Function for the third question
-  document.querySelector('.right-answer').addEventListener('click', allDone);
-
-  document.querySelector('.wrong-answer').addEventListener('click', allDone);
+  userWrong.addEventListener('click', function(){
+    score -= 5;
+    secondsLeft = secondsLeft - 10;
+    var rectangle = document.createElement('div');
+    main.appendChild(rectangle);
+    rectangle.setAttribute('style', 'margin: 80px');
+    var line = document.createElement('hr');
+    rectangle.appendChild(line);
+    var wrongAnswer = document.createElement('p');
+    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.textContent = 'Wrong Answer!'
+    main.appendChild(wrongAnswer);
+    setTimeout(allDone, 700);
+  })
 }
 
 /* --> All done <-- */
-  function allDone(event) {
-    event.preventDefault();
+  function allDone() {
+    
 
   // Clear main
   main.textContent = '';
@@ -402,7 +471,7 @@ function fifthQuestion (event) {
   headText.textContent = 'All done!';
   boxEl.appendChild(headText);
   var subText = document.createElement('p');
-  subText.textContent = 'Your final score is: ';
+  subText.textContent = 'Your final score is: ' + score;
   boxEl.appendChild(subText);
 
   // Create the form for user to input initials
@@ -418,17 +487,17 @@ function fifthQuestion (event) {
   formEl.appendChild(input);
   formEl.appendChild(submit);
   submit.addEventListener('click', highscores);
+
   }
 
   /* --> Highscores page <-- */
 function highscores() {
-  
   // Clear main
-  main.textContent = '';
+  document.body.textContent = '';
 
   // Create box to contain text
   var boxEl = document.createElement('div');
-  main.appendChild(boxEl);
+  document.body.appendChild(boxEl);
 
   // Create highscores list
   var highHeader = document.createElement('h1');
@@ -449,4 +518,16 @@ function highscores() {
   formEl.appendChild(goBack);
   formEl.appendChild(clearHighscores);
 
+  // Save user initials to local storage
+    var initials = document.querySelector('input').value
+    localStorage.setItem('initials', initials);
+  
+}
+
+// Save user initials to local storage
+function saveInitials(event) {
+  event.preventDefault();
+
+  var initials = input.value
+  localStorage.setItem('initials', initials);
 }
