@@ -449,9 +449,4 @@ function highscores() {
   formEl.appendChild(goBack);
   formEl.appendChild(clearHighscores);
 
-  // Go back to start page
-  goBack.addEventListener('click', function(){
-    return document;
-  });
-
 }
