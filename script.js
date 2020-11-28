@@ -2,9 +2,13 @@
 var startQuiz = document.querySelector('#start-quiz');
 startQuiz.addEventListener('click', firstQuestion);
 
+// View Highscores
+var viewHighscore = document.querySelector('.highscores')
+viewHighscore.addEventListener("click", highscores);
+
 // Global variables
 var secondsLeft = 76;
-var time = document.createElement('h5');
+var time = document.querySelector('h5');
 var header = document.querySelector('header');
 var main = document.querySelector('main');
 
@@ -15,7 +19,6 @@ function timerBegin() {
       
       time.textContent = "Timer: " + secondsLeft;
       header.appendChild(time);
-        // header.setAttribute('style', 'margin-top: 0;');
   
   
       if (secondsLeft === 0) {
@@ -27,6 +30,7 @@ function timerBegin() {
 
 /* --> Correct answer <-- */
 function correctAnswer() {
+  var timerInterval = setInterval(() => {
   var rectangle = document.createElement('div');
   main.appendChild(rectangle);
   rectangle.setAttribute('style', 'margin: 80px');
@@ -36,6 +40,8 @@ function correctAnswer() {
   rightAnswer.setAttribute('style', 'font-style: italic');
   rightAnswer.textContent = 'Correct Answer!'
   main.appendChild(rightAnswer);
+  }, 1000);
+  clearInterval(timerInterval);
 }
 
 
@@ -411,9 +417,39 @@ function fifthQuestion (event) {
   submit.setAttribute('style', 'margin-left: 10px');
   formEl.appendChild(input);
   formEl.appendChild(submit);
-
-
-
+  submit.addEventListener('click', highscores);
   }
 
+  /* --> Highscores page <-- */
+function highscores(event) {
+  event.preventDefault();
 
+  // Clear main
+  main.textContent = '';
+
+  // Create box to contain text
+  var boxEl = document.createElement('div');
+  main.appendChild(boxEl);
+
+  // Create highscores list
+  var highHeader = document.createElement('h1');
+  highHeader.textContent = 'Highscores';
+  boxEl.appendChild(highHeader);
+
+  // Create 'go-back' and 'clear-highscores' buttons
+  var goBack = document.createElement('button');
+  var clearHighscores = document.createElement('button');
+  goBack.textContent = 'Go Back';
+  goBack.setAttribute('type', 'submit');
+  goBack.setAttribute('style', 'margin: 10px');
+  clearHighscores.setAttribute('style', 'margin: 10px');
+  clearHighscores.textContent = 'Clear Highscores';
+  boxEl.appendChild(goBack);
+  boxEl.appendChild(clearHighscores);
+
+  // Go back to start page
+  goBack.addEventListener('click', function(){
+    return document;
+  });
+
+}
