@@ -21,7 +21,7 @@ function timerBegin() {
       time.textContent = "Timer: " + secondsLeft;
       header.appendChild(time);
   
-  
+      // Clears timer and goes to allDone page when it hits 0
       if (secondsLeft === 0) {
         clearInterval(timerInterval);
         allDone();
@@ -93,18 +93,15 @@ function firstQuestion (event) {
       score += 10;
 
       // Prints 'correct answer!'
-      var rectangle = document.createElement('div');
-      main.appendChild(rectangle);
-      rectangle.setAttribute('style', 'margin: 80px');
       var line = document.createElement('hr');
-      rectangle.appendChild(line);
+      answers.appendChild(line);
       var rightAnswer = document.createElement('p');
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
-      main.appendChild(rightAnswer);
+      answers.appendChild(rightAnswer);
 
-      // Waits 700milliseconds, then calls next question
-      setTimeout(secondQuestion, 700);
+      // Waits 1 second, then calls next question
+      setTimeout(secondQuestion, 1000);
   });
 
   // If user clicks wrong answer, then execute this function:
@@ -117,18 +114,15 @@ function firstQuestion (event) {
     secondsLeft = secondsLeft - 10;
 
     // Prints 'wrong answer!'
-    var rectangle = document.createElement('div');
-    main.appendChild(rectangle);
-    rectangle.setAttribute('style', 'margin: 80px');
     var line = document.createElement('hr');
-    rectangle.appendChild(line);
+    answers.appendChild(line);
     var wrongAnswer = document.createElement('p');
-    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.setAttribute('style', 'font-style: italic');
     wrongAnswer.textContent = 'Wrong Answer!'
-    main.appendChild(wrongAnswer);
+    answers.appendChild(wrongAnswer);
 
-    // Waits 700milliseconds, then calls next question
-    setTimeout(secondQuestion, 700);
+    // Waits 1 second, then calls next question
+    setTimeout(secondQuestion, 1000);
   })
     
 }
@@ -136,7 +130,6 @@ function firstQuestion (event) {
 
 /* --> Second question <-- */
 function secondQuestion () {
-  // event.preventDefault();
 
   // Clear main content
   main.textContent = '';
@@ -197,18 +190,16 @@ function secondQuestion () {
       score += 10;
 
       // Prints 'correct answer!'
-      var rectangle = document.createElement('div');
-      main.appendChild(rectangle);
-      rectangle.setAttribute('style', 'margin: 80px');
       var line = document.createElement('hr');
-      rectangle.appendChild(line);
+      answers.appendChild(line);
       var rightAnswer = document.createElement('p');
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
-      main.appendChild(rightAnswer);
+      answers.appendChild(rightAnswer);
 
-      // Waits 700milliseconds, then calls next question
-      setTimeout(thirdQuestion, 700);
+      // Waits 1 second, then calls next question
+      setTimeout(thirdQuestion, 1000);
+
   });
 
   // If user clicks wrong answer, then execute this function:
@@ -221,18 +212,15 @@ function secondQuestion () {
     secondsLeft = secondsLeft - 10;
 
     // Prints 'wrong answer!'
-    var rectangle = document.createElement('div');
-    main.appendChild(rectangle);
-    rectangle.setAttribute('style', 'margin: 80px');
     var line = document.createElement('hr');
-    rectangle.appendChild(line);
+    answers.appendChild(line);
     var wrongAnswer = document.createElement('p');
-    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.setAttribute('style', 'font-style: italic');
     wrongAnswer.textContent = 'Wrong Answer!'
-    main.appendChild(wrongAnswer);
+    answers.appendChild(wrongAnswer);
 
-    // Waits 700milliseconds, then calls next question
-    setTimeout(thirdQuestion, 700);
+    // Waits 1 second, then calls next question
+    setTimeout(thirdQuestion, 1000);
   })
 }
 
@@ -298,18 +286,15 @@ function thirdQuestion () {
       score += 10;
 
       // Prints 'correct answer!'
-      var rectangle = document.createElement('div');
-      main.appendChild(rectangle);
-      rectangle.setAttribute('style', 'margin: 80px');
       var line = document.createElement('hr');
-      rectangle.appendChild(line);
+      answers.appendChild(line);
       var rightAnswer = document.createElement('p');
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
-      main.appendChild(rightAnswer);
+      answers.appendChild(rightAnswer);
 
-      // Waits 700milliseconds, then calls next question
-      setTimeout(fourthQuestion, 700);
+      // Waits 1 second, then calls next question
+      setTimeout(fourthQuestion, 1000);
   });
 
   // If user clicks wrong answer, then execute this function:
@@ -322,18 +307,15 @@ function thirdQuestion () {
     secondsLeft = secondsLeft - 10;
 
     // Prints 'wrong answer!'
-    var rectangle = document.createElement('div');
-    main.appendChild(rectangle);
-    rectangle.setAttribute('style', 'margin: 80px');
     var line = document.createElement('hr');
-    rectangle.appendChild(line);
+    answers.appendChild(line);
     var wrongAnswer = document.createElement('p');
-    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.setAttribute('style', 'font-style: italic');
     wrongAnswer.textContent = 'Wrong Answer!'
-    main.appendChild(wrongAnswer);
+    answers.appendChild(wrongAnswer);
 
-    // Waits 700milliseconds, then calls next question
-    setTimeout(fourthQuestion, 700);
+    // Waits 1 second, then calls next question
+    setTimeout(fourthQuestion, 1000);
   })
 }
 
@@ -399,18 +381,15 @@ function fourthQuestion () {
       score += 10;
 
       // Prints 'correct answer!'
-      var rectangle = document.createElement('div');
-      main.appendChild(rectangle);
-      rectangle.setAttribute('style', 'margin: 80px');
       var line = document.createElement('hr');
-      rectangle.appendChild(line);
+      answers.appendChild(line);
       var rightAnswer = document.createElement('p');
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
-      main.appendChild(rightAnswer);
+      answers.appendChild(rightAnswer);
 
-      // Waits 700milliseconds, then calls next question
-      setTimeout(fifthQuestion, 700);
+      // Waits 1 second, then calls next question
+      setTimeout(fifthQuestion, 1000);
   });
 
   // If user clicks wrong answer, then execute this function:
@@ -423,18 +402,15 @@ function fourthQuestion () {
     secondsLeft = secondsLeft - 10;
 
     // Prints 'wrong answer!'
-    var rectangle = document.createElement('div');
-    main.appendChild(rectangle);
-    rectangle.setAttribute('style', 'margin: 80px');
     var line = document.createElement('hr');
-    rectangle.appendChild(line);
+    answers.appendChild(line);
     var wrongAnswer = document.createElement('p');
-    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.setAttribute('style', 'font-style: italic');
     wrongAnswer.textContent = 'Wrong Answer!'
-    main.appendChild(wrongAnswer);
+    answers.appendChild(wrongAnswer);
 
-    // Waits 700milliseconds, then calls next question
-    setTimeout(fifthQuestion, 700);
+    // Waits 1 second, then calls next question
+    setTimeout(fifthQuestion, 1000);
   })
 
 }
@@ -501,18 +477,15 @@ function fifthQuestion () {
       score += 10;
 
       // Prints 'correct answer!'
-      var rectangle = document.createElement('div');
-      main.appendChild(rectangle);
-      rectangle.setAttribute('style', 'margin: 80px');
       var line = document.createElement('hr');
-      rectangle.appendChild(line);
+      answers.appendChild(line);
       var rightAnswer = document.createElement('p');
       rightAnswer.setAttribute('style', 'font-style: italic');
       rightAnswer.textContent = 'Correct Answer!'
-      main.appendChild(rightAnswer);
+      answers.appendChild(rightAnswer);
 
-      // Waits 700milliseconds, then calls next question
-      setTimeout(allDone, 700);
+      // Waits 1 second, then calls allDone 
+      setTimeout(allDone, 1000);
   });
 
   // If user clicks wrong answer, then execute this function:
@@ -525,18 +498,15 @@ function fifthQuestion () {
     secondsLeft = secondsLeft - 10;
 
     // Prints 'wrong answer!'
-    var rectangle = document.createElement('div');
-    main.appendChild(rectangle);
-    rectangle.setAttribute('style', 'margin: 80px');
     var line = document.createElement('hr');
-    rectangle.appendChild(line);
+    answers.appendChild(line);
     var wrongAnswer = document.createElement('p');
-    wrongAnswer.setAttribute('style', 'font-style: italic;');
+    wrongAnswer.setAttribute('style', 'font-style: italic');
     wrongAnswer.textContent = 'Wrong Answer!'
-    main.appendChild(wrongAnswer);
+    answers.appendChild(wrongAnswer);
 
-    // Waits 700milliseconds, then calls next question
-    setTimeout(allDone, 700);
+    // Waits 1 second, then calls allDone
+    setTimeout(allDone, 1000);
   })
 }
 
@@ -571,7 +541,16 @@ function fifthQuestion () {
   submit.setAttribute('style', 'margin-left: 10px');
   formEl.appendChild(input);
   formEl.appendChild(submit);
-  submit.addEventListener('click', highscores);
+
+
+  submit.addEventListener('click', function(){   
+    var initials = document.querySelector('input').value
+    localStorage.setItem('user: ', initials);
+    localStorage.setItem('score: ', score);
+    highscores();
+  });
+
+ 
 
   }
 
@@ -584,10 +563,20 @@ function highscores() {
   var boxEl = document.createElement('div');
   document.body.appendChild(boxEl);
 
-  // Create highscores list
+  // Create highscores header
   var highHeader = document.createElement('h1');
   highHeader.textContent = 'Highscores';
   boxEl.appendChild(highHeader);
+
+  //  Create highscores list
+  // var user = localStorage.getItem(initials);
+  // var listEl = document.createElement('div');
+  // boxEl.appendChild(listEl);
+  // var list = document.createElement('p');
+  // list.textContent = user + score;
+  // listEl.appendChild(list);
+  
+
 
   // Create 'go-back' and 'clear-highscores' buttons
   var formEl = document.createElement('form');
@@ -603,16 +592,6 @@ function highscores() {
   formEl.appendChild(goBack);
   formEl.appendChild(clearHighscores);
 
-  // Save user initials to local storage
-    var initials = document.querySelector('input').value
-    localStorage.setItem('initials', initials);
   
-}
-
-// Save user initials to local storage
-function saveInitials(event) {
-  event.preventDefault();
-
-  var initials = input.value
-  localStorage.setItem('initials', initials);
+  
 }
