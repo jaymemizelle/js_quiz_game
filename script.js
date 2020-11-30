@@ -331,7 +331,7 @@ function fourthQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = 'String values must be enclosed withing _____ when being assigned to variables.';
+  questionEl.textContent = 'String values must be enclosed within _____ when being assigned to variables.';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
