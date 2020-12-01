@@ -92,8 +92,8 @@ function firstQuestion (event) {
       rightAnswer.textContent = 'Correct Answer!'
       answers.appendChild(rightAnswer);
 
-      // Waits 1 second, then calls next question
-      setTimeout(secondQuestion, 1000);
+      // Waits 900 milliseconds, then calls next question
+      setTimeout(secondQuestion, 900);
   });
 
   // For loop iterates through wrong answers 
@@ -118,8 +118,8 @@ function firstQuestion (event) {
     wrongAnswer.textContent = 'Wrong Answer!'
     answers.appendChild(wrongAnswer);
 
-    // Waits 1 second, then calls next question
-    setTimeout(secondQuestion, 1000);
+    // Waits 900 milliseconds, then calls next question
+    setTimeout(secondQuestion, 900);
   })
   }
     
@@ -187,8 +187,8 @@ function secondQuestion () {
       rightAnswer.textContent = 'Correct Answer!'
       answers.appendChild(rightAnswer);
 
-      // Waits 1 second, then calls next question
-      setTimeout(thirdQuestion, 1000);
+      // Waits 900 milliseconds, then calls next question
+      setTimeout(thirdQuestion, 900);
 
   });
 
@@ -214,8 +214,8 @@ function secondQuestion () {
     wrongAnswer.textContent = 'Wrong Answer!'
     answers.appendChild(wrongAnswer);
 
-    // Waits 1 second, then calls next question
-    setTimeout(thirdQuestion, 1000);
+    // Waits 900 milliseconds, then calls next question
+    setTimeout(thirdQuestion, 900);
   })
   }
 }
@@ -281,8 +281,8 @@ function thirdQuestion () {
       rightAnswer.textContent = 'Correct Answer!'
       answers.appendChild(rightAnswer);
 
-      // Waits 1 second, then calls next question
-      setTimeout(fourthQuestion, 1000);
+      // Waits 900 milliseconds, then calls next question
+      setTimeout(fourthQuestion, 900);
   });
 
   // For loop iterates through wrong answers
@@ -307,8 +307,8 @@ function thirdQuestion () {
     wrongAnswer.textContent = 'Wrong Answer!'
     answers.appendChild(wrongAnswer);
 
-    // Waits 1 second, then calls next question
-    setTimeout(fourthQuestion, 1000);
+    // Waits 900 milliseconds, then calls next question
+    setTimeout(fourthQuestion, 900);
   })
   }
 }
@@ -373,8 +373,8 @@ function fourthQuestion () {
       rightAnswer.textContent = 'Correct Answer!'
       answers.appendChild(rightAnswer);
 
-      // Waits 1 second, then calls next question
-      setTimeout(fifthQuestion, 1000);
+      // Waits 900 milliseconds, then calls next question
+      setTimeout(fifthQuestion, 900);
   });
 
   // For loop iterates through wrong answers
@@ -399,8 +399,8 @@ function fourthQuestion () {
     wrongAnswer.textContent = 'Wrong Answer!'
     answers.appendChild(wrongAnswer);
 
-    // Waits 1 second, then calls next question
-    setTimeout(fifthQuestion, 1000);
+    // Waits 900 milliseconds, then calls next question
+    setTimeout(fifthQuestion, 900);
   })
   }
 
@@ -468,8 +468,8 @@ function fifthQuestion () {
       rightAnswer.textContent = 'Correct Answer!'
       answers.appendChild(rightAnswer);
 
-      // Waits 1 second, then calls allDone 
-      setTimeout(allDone, 1000);
+      // Waits 900 milliseconds, then calls allDone 
+      setTimeout(allDone, 900);
   });
 
   // For loop iterates through wrong answers
@@ -494,8 +494,8 @@ function fifthQuestion () {
     wrongAnswer.textContent = 'Wrong Answer!'
     answers.appendChild(wrongAnswer);
 
-    // Waits 1 second, then calls next question
-    setTimeout(allDone, 1000);
+    // Waits 900 milliseconds, then calls next question
+    setTimeout(allDone, 900);
   })
   }
 }
@@ -542,7 +542,6 @@ function fifthQuestion () {
   });
 
  
-
   }
 
   /* --> Highscores page <-- */
@@ -553,8 +552,6 @@ function highscores() {
   // Create box to contain text
   var boxEl = document.createElement('div');
   document.body.appendChild(boxEl);
-
-  // boxEl.setAttribute('style'. 'width: 100%; background-color: black');
 
   // Create highscores header
   var highHeader = document.createElement('h1');
@@ -585,7 +582,7 @@ function highscores() {
   formEl.appendChild(goBack);
   formEl.appendChild(clearHighscores);
 
-  // Set style for background
+  // Sets style for background of highscores
   boxEl.setAttribute('style', 'width: 100%; padding-bottom: 20px; background-color: black');
   
 }
