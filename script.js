@@ -22,7 +22,7 @@ function timerBegin() {
       header.appendChild(time);
   
       // Clears timer and goes to allDone page when it hits 0
-      if (secondsLeft === 0) {
+      if (secondsLeft <= 0) {
         clearInterval(timerInterval);
         allDone();
       } 
@@ -74,17 +74,9 @@ function firstQuestion (event) {
     li3.appendChild(c);
     li4.appendChild(d);
 
-    // Set classes for correct answer
+    // Set class for correct answer & select it
     c.setAttribute('class', 'right-answer');
-
-    // Set classes for incorrect answers
-    a.setAttribute('class', 'wrong-answer');
-    b.setAttribute('class', 'wrong-answer');
-    d.setAttribute('class', 'wrong-answer');
-
-    // Variables which select the user's answer by class
     var userRight = document.querySelector('.right-answer');
-    var userWrong = document.querySelector('.wrong-answer');
 
     // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
@@ -104,8 +96,13 @@ function firstQuestion (event) {
       setTimeout(secondQuestion, 1000);
   });
 
-  // If user clicks wrong answer, then execute this function:
-  userWrong.addEventListener('click', function(){
+  // For loop iterates through wrong answers 
+  var wrongAnswerArray = [a, b, d];
+  for (i = 0; i < wrongAnswerArray.length; i++) {
+    var userWrong = wrongAnswerArray[i];
+
+    // If user clicks wrong answer, then execute this function:
+    userWrong.addEventListener('click', function(){
 
     // Subtracts 5 points from score
     score -= 5;
@@ -124,6 +121,8 @@ function firstQuestion (event) {
     // Waits 1 second, then calls next question
     setTimeout(secondQuestion, 1000);
   })
+  }
+    
     
 }
 
@@ -170,18 +169,9 @@ function secondQuestion () {
   li3.appendChild(c);
   li4.appendChild(d);
 
-  // Set classes for correct answer
+  // Set classes for correct answer & selects it
   c.setAttribute('class', 'right-answer');
-
-  // Set classes for incorrect answers
-  a.setAttribute('class', 'wrong-answer');
-  b.setAttribute('class', 'wrong-answer');
-  d.setAttribute('class', 'wrong-answer');
-
-
-  // Variables which select the user's answer by class
   var userRight = document.querySelector('.right-answer');
-  var userWrong = document.querySelector('.wrong-answer');
 
     // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
@@ -202,8 +192,13 @@ function secondQuestion () {
 
   });
 
-  // If user clicks wrong answer, then execute this function:
-  userWrong.addEventListener('click', function(){
+ // For loop iterates through wrong answers
+  var wrongAnswerArray = [a, b, d];
+  for (i = 0; i < wrongAnswerArray.length; i++) {
+    var userWrong = wrongAnswerArray[i];
+
+     // If user clicks wrong answer, then execute this function:
+    userWrong.addEventListener('click', function(){
 
     // Subtracts 5 points from score
     score -= 5;
@@ -222,6 +217,7 @@ function secondQuestion () {
     // Waits 1 second, then calls next question
     setTimeout(thirdQuestion, 1000);
   })
+  }
 }
 
 /* --> Third question <-- */
@@ -266,18 +262,10 @@ function thirdQuestion () {
   li3.appendChild(c);
   li4.appendChild(d);
 
-  // Set classes for correct answer
+  // Set class for correct answer & selects it
   d.setAttribute('class', 'right-answer');
-
-  // Set classes for incorrect answers
-  a.setAttribute('class', 'wrong-answer');
-  b.setAttribute('class', 'wrong-answer');
-  c.setAttribute('class', 'wrong-answer');
-
-
-    // Variables which select the user's answer by class
-    var userRight = document.querySelector('.right-answer');
-    var userWrong = document.querySelector('.wrong-answer');
+  var userRight = document.querySelector('.right-answer');
+   
 
     // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
@@ -297,8 +285,13 @@ function thirdQuestion () {
       setTimeout(fourthQuestion, 1000);
   });
 
-  // If user clicks wrong answer, then execute this function:
-  userWrong.addEventListener('click', function(){
+  // For loop iterates through wrong answers
+  var wrongAnswerArray = [a, b, c];
+  for (i = 0; i < wrongAnswerArray.length; i++) {
+    var userWrong = wrongAnswerArray[i];
+
+    // If user clicks wrong answer, then execute this function:
+    userWrong.addEventListener('click', function(){
 
     // Subtracts 5 points from score
     score -= 5;
@@ -317,6 +310,7 @@ function thirdQuestion () {
     // Waits 1 second, then calls next question
     setTimeout(fourthQuestion, 1000);
   })
+  }
 }
 
 /* --> Fourth question <-- */
@@ -361,19 +355,10 @@ function fourthQuestion () {
   li3.appendChild(c);
   li4.appendChild(d);
 
-  // Set classes for correct answer
+  // Set class for correct answer & selects it
   b.setAttribute('class', 'right-answer');
-
-  // Set classes for incorrect answers
-  a.setAttribute('class', 'wrong-answer');
-  c.setAttribute('class', 'wrong-answer');
-  d.setAttribute('class', 'wrong-answer');
-
-
-    // Variables which select the user's answer by class
-    var userRight = document.querySelector('.right-answer');
-    var userWrong = document.querySelector('.wrong-answer');
-
+  var userRight = document.querySelector('.right-answer');
+    
     // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
 
@@ -392,8 +377,13 @@ function fourthQuestion () {
       setTimeout(fifthQuestion, 1000);
   });
 
-  // If user clicks wrong answer, then execute this function:
-  userWrong.addEventListener('click', function(){
+  // For loop iterates through wrong answers
+  var wrongAnswerArray = [a, c, d];
+  for (i = 0; i < wrongAnswerArray.length; i++) {
+    var userWrong = wrongAnswerArray[i];
+
+      // If user clicks wrong answer, then execute this function:
+    userWrong.addEventListener('click', function(){
 
     // Subtracts 5 points from score
     score -= 5;
@@ -412,6 +402,7 @@ function fourthQuestion () {
     // Waits 1 second, then calls next question
     setTimeout(fifthQuestion, 1000);
   })
+  }
 
 }
 
@@ -457,18 +448,11 @@ function fifthQuestion () {
   li3.appendChild(c);
   li4.appendChild(d);
 
-  // Set classes for correct answer
+  // Set class for correct answer & select it
   a.setAttribute('class', 'right-answer');
-
-  // Set classes for incorrect answers
-  b.setAttribute('class', 'wrong-answer');
-  c.setAttribute('class', 'wrong-answer');
-  d.setAttribute('class', 'wrong-answer');
-
-
-    // Variables which select the user's answer by class
-    var userRight = document.querySelector('.right-answer');
-    var userWrong = document.querySelector('.wrong-answer');
+  var userRight = document.querySelector('.right-answer');
+    
+    
 
     // If user clicks right answer, execute this function:
   userRight.addEventListener('click', function(){
@@ -488,8 +472,13 @@ function fifthQuestion () {
       setTimeout(allDone, 1000);
   });
 
-  // If user clicks wrong answer, then execute this function:
-  userWrong.addEventListener('click', function(){
+  // For loop iterates through wrong answers
+  var wrongAnswerArray = [b, c, d];
+  for (i = 0; i < wrongAnswerArray.length; i++) {
+    var userWrong = wrongAnswerArray[i];
+
+    // If user clicks wrong answer, then execute this function:
+    userWrong.addEventListener('click', function(){
 
     // Subtracts 5 points from score
     score -= 5;
@@ -505,9 +494,10 @@ function fifthQuestion () {
     wrongAnswer.textContent = 'Wrong Answer!'
     answers.appendChild(wrongAnswer);
 
-    // Waits 1 second, then calls allDone
+    // Waits 1 second, then calls next question
     setTimeout(allDone, 1000);
   })
+  }
 }
 
 /* --> All done <-- */
@@ -520,6 +510,7 @@ function fifthQuestion () {
   // Create box to contain text
   var boxEl = document.createElement('div');
   main.appendChild(boxEl);
+  
 
   // Create h2 text and append it to the box 
   var headText = document.createElement('h2');
@@ -563,19 +554,21 @@ function highscores() {
   var boxEl = document.createElement('div');
   document.body.appendChild(boxEl);
 
+  // boxEl.setAttribute('style'. 'width: 100%; background-color: black');
+
   // Create highscores header
   var highHeader = document.createElement('h1');
   highHeader.textContent = 'Highscores';
   boxEl.appendChild(highHeader);
 
   //  Create highscores list
-  // var user = localStorage.getItem(initials);
-  // var listEl = document.createElement('div');
-  // boxEl.appendChild(listEl);
-  // var list = document.createElement('p');
-  // list.textContent = user + score;
-  // listEl.appendChild(list);
-  
+  var user = JSON.parse(localStorage.getItem(user));
+  var userScore = JSON.parse(localStorage.getItem(score));
+  var listEl = document.createElement('ul');
+  boxEl.appendChild(listEl);
+  var list = document.createElement('li');
+  list.textContent = 'Initials: ' + user + ' | ' + 'Score: ' + parseInt(userScore);
+  listEl.appendChild(list);
 
 
   // Create 'go-back' and 'clear-highscores' buttons
@@ -592,6 +585,7 @@ function highscores() {
   formEl.appendChild(goBack);
   formEl.appendChild(clearHighscores);
 
-  
+  // Set style for background
+  boxEl.setAttribute('style', 'width: 100%; padding-bottom: 20px; background-color: black');
   
 }
