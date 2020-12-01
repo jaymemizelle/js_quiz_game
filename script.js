@@ -44,7 +44,7 @@ function firstQuestion (event) {
 
     // Create question and append them to the box 
     var questionEl = document.createElement('h2');
-    questionEl.textContent = 'Commonly used data types DO NOT include: ';
+    questionEl.textContent = '1. Commonly used data types DO NOT include: ';
     boxEl.appendChild(questionEl);
 
     // Create an ordered list for the answers and append the list items to the ol
@@ -139,7 +139,7 @@ function secondQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = 'The condition in an if/else statment is enclosed within _______.';
+  questionEl.textContent = '2. The condition in an if/else statment is enclosed within _______.';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and append the list items to the ol
@@ -232,7 +232,7 @@ function thirdQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = 'Arrays in JavaScript can be used to store _______.';
+  questionEl.textContent = '3. Arrays in JavaScript can be used to store _______.';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
@@ -325,7 +325,7 @@ function fourthQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = 'String values must be enclosed within _____ when being assigned to variables.';
+  questionEl.textContent = '4. String values must be enclosed within _____ when being assigned to variables.';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
@@ -418,7 +418,7 @@ function fifthQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = 'A very useful tool used during development and debugging for printing content to the debugger is: ';
+  questionEl.textContent = '5. A very useful tool used during development and debugging for printing content to the debugger is: ';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
@@ -533,14 +533,24 @@ function fifthQuestion () {
   formEl.appendChild(input);
   formEl.appendChild(submit);
 
+
     // When the user clicks the submit button, add the user's initials and score to local storage
-  submit.addEventListener('click', function(){   
-    var initials = document.querySelector('input').value;
+  submit.addEventListener('click', function(event){ 
+    event.preventDefault();
+    var initials = document.querySelector('input').value;  
     localStorage.setItem('user', initials);
     localStorage.setItem('score', score);
-    highscores();
-  });
 
+    // Calls function highscores page after button is clicked
+    highscores();
+
+      // Sets condition if user does not enter initials
+    if (initials === '') {
+      localStorage.clear();
+      alert('You did not enter your intitials! So your highscore will not be saved!')
+    }
+
+  });
  
   }
 
@@ -566,7 +576,7 @@ function highscores() {
   var list = document.createElement('li');
   list.textContent = user + ' | ' + parseInt( userScore);
   listEl.appendChild(list);
-  list.setAttribute('style', 'color: green');
+  list.setAttribute('style', 'color: green; margin-left: 0; padding-left: 0;');
 
 
   // Create 'go-back' and 'clear-highscores' buttons
