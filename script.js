@@ -533,11 +533,11 @@ function fifthQuestion () {
   formEl.appendChild(input);
   formEl.appendChild(submit);
 
-
+    // When the user clicks the submit button, add the user's initials and score to local storage
   submit.addEventListener('click', function(){   
-    var initials = document.querySelector('input').value
-    localStorage.setItem('user: ', initials);
-    localStorage.setItem('score: ', score);
+    var initials = document.querySelector('input').value;
+    localStorage.setItem('user', initials);
+    localStorage.setItem('score', score);
     highscores();
   });
 
@@ -559,13 +559,14 @@ function highscores() {
   boxEl.appendChild(highHeader);
 
   //  Create highscores list
-  var user = JSON.parse(localStorage.getItem(user));
-  var userScore = JSON.parse(localStorage.getItem(score));
+  var user = localStorage.getItem('user');
+  var userScore = localStorage.getItem('score');
   var listEl = document.createElement('ul');
   boxEl.appendChild(listEl);
   var list = document.createElement('li');
-  list.textContent = 'Initials: ' + user + ' | ' + 'Score: ' + parseInt(userScore);
+  list.textContent = user + ' | ' + parseInt( userScore);
   listEl.appendChild(list);
+  list.setAttribute('style', 'color: green');
 
 
   // Create 'go-back' and 'clear-highscores' buttons
@@ -582,7 +583,22 @@ function highscores() {
   formEl.appendChild(goBack);
   formEl.appendChild(clearHighscores);
 
+  // Clears highscores when button clicked
+  clearHighscores.addEventListener('click', function(event) {
+    event.preventDefault();
+    list.textContent = '';
+    localStorage.clear();
+  })
+
+
   // Sets style for background of highscores
   boxEl.setAttribute('style', 'width: 100%; padding-bottom: 20px; background-color: black');
+
+  // Sets condition for first time player who chooses to view highscores
+  if (user === null) {
+    return list.textContent = 'No highscores Yet! Click Go Back Button to play!'
+  }
+
+
   
 }
