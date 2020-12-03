@@ -10,5 +10,6 @@ This web application is designed as a responsive web game for the user to test t
 # Technologies use to build this application: 
 HTML, CSS, Javascript
 
-Deployed Application:  https://jaymemizelle.github.io/js-quiz-game/
+# Deployed Application Link:  
+https://jaymemizelle.github.io/js-quiz-game/
 
