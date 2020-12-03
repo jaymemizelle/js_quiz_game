@@ -44,7 +44,7 @@ function firstQuestion (event) {
 
     // Create question and append them to the box 
     var questionEl = document.createElement('h2');
-    questionEl.textContent = '1. Commonly used data types DO NOT include: ';
+    questionEl.textContent = '1. The following is NOT a data type: ';
     boxEl.appendChild(questionEl);
 
     // Create an ordered list for the answers and append the list items to the ol
@@ -139,7 +139,7 @@ function secondQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = '2. The condition in an if/else statment is enclosed within _______.';
+  questionEl.textContent = '2. What do we use to enclose the condition of an if/else statment?';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and append the list items to the ol
@@ -232,7 +232,7 @@ function thirdQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = '3. Arrays in JavaScript can be used to store _______.';
+  questionEl.textContent = '3.  _______ can be stored in arrays in Javascript. ';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
@@ -325,7 +325,7 @@ function fourthQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = '4. String values must be enclosed within _____ when being assigned to variables.';
+  questionEl.textContent = '4.  _____ are typically used to enclose string values.';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
@@ -418,7 +418,7 @@ function fifthQuestion () {
 
   // Create question and append them to the box 
   var questionEl = document.createElement('h2');
-  questionEl.textContent = '5. A very useful tool used during development and debugging for printing content to the debugger is: ';
+  questionEl.textContent = '5. The most commonly used debugging tool in Javascript is: ';
   boxEl.appendChild(questionEl);
 
   // Create an ordered list for the answers and appends the list items to the ol
