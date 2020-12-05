@@ -163,7 +163,7 @@ function secondQuestion () {
   a.textContent = 'A. quotes';
   b.textContent = 'B. curly brackets';
   c.textContent = 'C. parentheses';
-  d.textContent = 'D. square brakets';
+  d.textContent = 'D. square brackets';
   li1.appendChild(a);
   li2.appendChild(b);
   li3.appendChild(c);
