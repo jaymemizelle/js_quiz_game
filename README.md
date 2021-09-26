@@ -24,7 +24,7 @@ There are no special instructions to get a copy of this project up and running o
 * Javascript
 
 ## Deployment
-Deployed Application URL: https://jaymemizelle.github.io/js-quiz-game/
+Deployed Application URL: https://theprivacydev.github.io/js-quiz-game/
 
 
 ## Next Steps
@@ -34,9 +34,9 @@ Deployed Application URL: https://jaymemizelle.github.io/js-quiz-game/
 ## Next Version of Application
 ### Coding Quiz Challenge
 This is a complete refactor of this application in order to make the code more dry and efficient.
-* Repository Link: https://github.com/jaymemizelle/coding-quiz-challenge
-* Deployed Application URL: https://jaymemizelle.github.io/coding-quiz-challenge/
+* Repository Link: https://github.com/theprivacydev/coding-quiz-challenge
+* Deployed Application URL: https://theprivacydev.github.io/coding-quiz-challenge/
 
 
  ## Author
-* Jayme Mizelle
+* The Privacy Dev
